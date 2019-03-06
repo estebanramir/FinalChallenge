@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="stylesCreate.css">
+</head>
+<body>
+<p>Welcome <h2>CREATE USER</h2></p>
+<p>Usser:  <input type="text" id="user" name="user" th:value="*{user}" /></p>
+<p>Pasword:  <input type="text" id="password" name="password" th:value="*{password}" /></p>
+<p>Name:  <input type="text" id="name" name="name" th:value="*{name}" /></p>
+<p>Description:  <input type="text" id="description" name="description" th:value="*{description}" /></p>
+<p>Email:  <input type="text" id="Email" name="Email" th:value="*{Email}" /></p>
+<p><a href="/login">Login</a>  <a href="/myAccount">Create</a></p>
+
+</body>
+</html>
