@@ -1,10 +1,14 @@
 package hello.API;
 
-import lombok.Data;
 
-@Data
 public class Anime {
-    Attributes attributes;
-    Meta meta;
-    int id;
+    private Data data;
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
 }

@@ -3,12 +3,28 @@ package hello.API;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class SearchManager {
     static final String root = "https://kitsu.io/api/edge/anime";
+    private static String decodeLink(String link) {
+
+        String decodedLink = null;
+        try {
+
+            decodedLink = URLDecoder.decode(link, "UTF-8");
+
+        } catch (UnsupportedEncodingException e) {
+
+            System.err.println(e);
+
+        }
+        return decodedLink;
+    }
 
     public static Anime getSingleEntry(int number) throws Exception {
         RestTemplate restTemplate = new RestTemplate();
@@ -22,17 +38,15 @@ public class SearchManager {
 
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 
-        String currentUrl = root + "/" + number;
+        String currentUrl = decodeLink(root) + "/" + number;
         ResponseEntity<Anime> animeEntry = restTemplate.exchange(currentUrl, HttpMethod.GET, entity, Anime.class);
-
         return animeEntry.getBody();
     }
 
-    public static ArrayList<Anime> getAllAnimes() throws Exception {
+    public ArrayList<Anime> getAllAnimes() throws Exception {
         ArrayList<Anime> allAnimes = new ArrayList<>();
 
         for (int i = 1; i < 10; i++) {
-            System.out.println(i);
             try {
                 allAnimes.add(getSingleEntry(i));
             } catch (Exception e) {
