@@ -38,6 +38,7 @@ public class SearchManager {
 
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 
+//        https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0
         String currentUrl = decodeLink(root) + "/" + number;
         ResponseEntity<Anime> animeEntry = restTemplate.exchange(currentUrl, HttpMethod.GET, entity, Anime.class);
         return animeEntry.getBody();
@@ -46,7 +47,7 @@ public class SearchManager {
     public ArrayList<Anime> getAllAnimes() throws Exception {
         ArrayList<Anime> allAnimes = new ArrayList<>();
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 20; i++) {
             try {
                 allAnimes.add(getSingleEntry(i));
             } catch (Exception e) {

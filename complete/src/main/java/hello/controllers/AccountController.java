@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping(path = "/hola")
 public class AccountController {
 
+
+
     @GetMapping("/{id}/favorites")
     public String login(@PathVariable String id) {
         return "login";

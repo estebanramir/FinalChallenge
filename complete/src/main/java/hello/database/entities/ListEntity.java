@@ -16,7 +16,7 @@ public class ListEntity implements Serializable {
     private Long id;
     private Long idAccount;
     private Long idSerie;
-    private int rank;
+    private double rank;
     private Boolean favorito;
     private Boolean visto;
     private Boolean porVer;

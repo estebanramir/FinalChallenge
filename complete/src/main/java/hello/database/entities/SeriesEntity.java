@@ -17,7 +17,7 @@ public class SeriesEntity {
     private String nombre;
     private String showType;
     private String status;
-    private String ageRatinkg;
+    private String ageRating;
     private int watched;
     private int favorited;
     private double rank;
@@ -55,11 +55,11 @@ public class SeriesEntity {
     }
 
     public String getAgeRatinkg() {
-        return ageRatinkg;
+        return ageRating;
     }
 
     public void setAgeRatinkg(String ageRatinkg) {
-        this.ageRatinkg = ageRatinkg;
+        this.ageRating = ageRatinkg;
     }
 
     public int getWatched() {
