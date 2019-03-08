@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,20 @@ public class SeriesController {
 
     if(showType!= null && status== null && ageRating== null)
         return seriesRepository.findByShowType(showType);
+    else if(showType== null && status!= null && ageRating== null)
+        return seriesRepository.findByStatus(status);
+    else if(showType== null && status== null && ageRating!= null)
+        return seriesRepository.findByAgeRating(ageRating);
+    else if(showType!= null && status!= null && ageRating== null)
+        return seriesRepository.findByShowTypeAndStatus(showType,status);
+    else if(showType== null && status!= null && ageRating!=null)
+        return seriesRepository.findByAgeRatingAndStatus(ageRating, status);
+    else if(showType!= null && status== null && ageRating!=null)
+        return seriesRepository.findByAgeRatingAndShowType(ageRating,showType);
+    else if(showType== null && status== null && ageRating==null)
+        return seriesRepository.findByAgeRatingAndStatusAndShowType(ageRating, status, showType);
     return null;
     }
+
 
 }

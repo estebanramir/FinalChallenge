@@ -47,7 +47,7 @@ public class SearchManager {
     public ArrayList<Anime> getAllAnimes() throws Exception {
         ArrayList<Anime> allAnimes = new ArrayList<>();
 
-        for (int i = 1; i < 20; i++) {
+        for (int i = 1; i <500; i++) {
             try {
                 allAnimes.add(getSingleEntry(i));
             } catch (Exception e) {

@@ -1,33 +1,11 @@
-package hello.database.entities;
+package hello.modelo;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.*;
-import java.util.Set;
-
-
-
-@Entity
-@Table(name="account")
-public class AccountEntity {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+public class AccountCreateRequest {
     private String userName;
     private String password;
     private String email;
     private String description;
     private String image;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUserName() {
         return userName;

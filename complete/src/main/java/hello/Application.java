@@ -6,7 +6,6 @@ import hello.database.entities.AccountEntity;
 import hello.database.entities.SeriesEntity;
 import hello.database.repository.AccountRepository;
 import hello.database.repository.SeriesRepository;
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
