@@ -9,6 +9,7 @@ import java.util.List;
 public interface AccountRepository extends CrudRepository<AccountEntity, Long> {
     List<AccountEntity> findAll();
     AccountEntity findOneById(Long id);
+    AccountEntity findOneByUserName(String userName);
 
 
 }

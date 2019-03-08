@@ -11,5 +11,7 @@ public interface ListRepository extends CrudRepository<ListEntity, Long> {
     List<ListEntity> findAll();
     List<ListEntity> findByIdAccount(Long idAccount);
     List<ListEntity> findByIdSerie(Long idSerie);
-    List<ListEntity> findByIdAccountAnd(Long idAccount);
+
+    List<ListEntity> findByIdAccountAndFavorito(Long idAccount, Boolean favorito);
+
 }
